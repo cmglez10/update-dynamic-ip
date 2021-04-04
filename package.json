@@ -1,0 +1,24 @@
+{
+  "name": "update-dynamic-ip",
+  "version": "1.0.0",
+  "description": "It updates your IP in no-ip.org every hour for you",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmglez10/update-dynamic-ip.git"
+  },
+  "keywords": [
+    "dynamic",
+    "ip",
+    "no-ip"
+  ],
+  "author": "César González CGI",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cmglez10/update-dynamic-ip/issues"
+  },
+  "homepage": "https://github.com/cmglez10/update-dynamic-ip#readme"
+}
