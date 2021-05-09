@@ -1,32 +1,30 @@
-const http = require('http');
+const fetch = require('node-fetch');
+const config = require('./config');
 
 // create a buffer
-const buff = Buffer.from('<<<USER>>>:<<<PASSWORD>>>', 'utf-8');
+const buff = Buffer.from(`${config.user}:${config.password}`, 'utf-8');
 
 // decode buffer as Base64
 const base64 = buff.toString('base64');
 
 const options = {
-  hostname: 'dynupdate.no-ip.com',
-  port: 443,
-  path: '/nic/update?hostname=<<<HOSTNAME>>>',
-  method: 'GET',
   headers: {
     'Content-Type': 'application/json',
   },
 };
 
-const req = http.request(options, (res) => {
-  console.log(`statusCode: ${res.statusCode}`);
+const updateIp = () => {
+  fetch(`https://dynupdate.no-ip.com/nic/update?hostname=${config.hostname}`)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((res) => {
+      console.error(res);
+    });
+};
 
-  res.on('data', (d) => {
-    process.stdout.write(d);
-  });
-});
+// updateIp();
 
-req.on('error', (error) => {
-  console.error(error);
-});
-
-req.write(data);
-req.end();
+setInterval(() => {
+  updateIp();
+}, config.interval);

@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cmglez10/update-dynamic-ip.git"
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/cmglez10/update-dynamic-ip/issues"
   },
-  "homepage": "https://github.com/cmglez10/update-dynamic-ip#readme"
+  "homepage": "https://github.com/cmglez10/update-dynamic-ip#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
 }
